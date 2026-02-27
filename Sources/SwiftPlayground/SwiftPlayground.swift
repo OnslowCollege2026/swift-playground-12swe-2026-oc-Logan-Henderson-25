@@ -25,6 +25,11 @@ func menuChoice() -> Int {
     }
 }
 
+/// This function lets the user add more eggs to their stock
+/// - Parameters
+///     - currentStock is how many eggs the user currently has in their stock
+///     - amount is how many eggs the user is adding to their stock
+/// - This function returns the amount of eggs the user has added to their stock
 func addEggs(currentStock: Int, amount: Int) -> Int{
 if amount < 1, amount + currentStock > 1000 {
     print("Invalid amount, eggs must be between 1 and 1000")
@@ -35,7 +40,10 @@ if amount < 1, amount + currentStock > 1000 {
     return newStock
 }
 
+func sellEggs(currentStock: Int, amount: Int) -> Int?{
+    if amount < 1, amount > currentStock {}
 
+}
 
 @main
 struct SwiftPlayground {
