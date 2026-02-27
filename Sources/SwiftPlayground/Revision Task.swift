@@ -1,0 +1,42 @@
+func readNumber(prompt: String) -> Double {
+    print(prompt)
+    var returnValue = -1.0
+    guard let userInput = readLine(), let number = Double(userInput), number > 0 else {
+        print("Invalid number.")
+        return readNumber(prompt: prompt)
+    }
+    returnValue = number
+    return returnValue
+}
+struct ricky {
+    static func main() {
+        
+        let maximumItemVolume = 2.0
+
+        let roomLength = readNumber(prompt: "Enter the room length: ")
+        let roomWidth = readNumber(prompt: "Enter the room width: ")
+        let roomHeight = readNumber(prompt: "Enter the room height: ")
+
+        let roomArea = roomLength * roomWidth
+        let roomVolume = roomArea * roomHeight
+
+        print("Room area: \(roomArea) m²")
+        print("Room volume: \(roomVolume) m³")
+
+        let furnitureVolumes = [1.2, 0.8, 2.5, 0.6, 1.0]
+
+        var totalFurnitureVolume = 0.0
+
+        furnitureVolumes.enumerated().forEach { index, volume in
+            print("Item \(index + 1): \(volume) m³")
+            if volume > maximumItemVolume {
+                print("Oversized item detected.")
+            }
+            totalFurnitureVolume = totalFurnitureVolume + volume
+        }
+
+        let usableVolume = roomVolume - totalFurnitureVolume
+        print("Usable volume: \(usableVolume) m³")
+
+    }
+}
