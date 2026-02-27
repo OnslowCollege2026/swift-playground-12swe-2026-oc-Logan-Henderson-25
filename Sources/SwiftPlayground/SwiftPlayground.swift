@@ -2,37 +2,43 @@
 // https://docs.swift.org/swift-book
 
 
-func printRoomIntro() {
-
-    print("This program calculates room area and volume.")
-    print("It also finds the usable space after furniture.")
-}
-
-func printDivider() {
-    print("--------")
-}
-
-func printUnitsNote() {
-    print("All measurements are in metres.")
-}
-
-func printGoodbye() {
-    print("Done. Thanks for using the calculator.")
-}
 
 @main
 struct SwiftPlayground {
-    static func main() {
+    static func main() {        
+var status = 0
+let statusChecker = 2
+var name  = ""
 
-printRoomIntro()
+while name == "" {
+    print("What name do you want to be selected?")
+    let input = readLine()!
+    if input == "" {
+        print("Please enter a valid name.")
+    } else {
+        print("You have entered \(input)")
+        name = input
+    }
+}
 
-printDivider()
-print("Summary here")
-printDivider()
+while status == 0 {
+    print("Please enter a number between 1 and 2.")
+    if let input = readLine(), let statusInput = Int(input) {
+        if statusInput > statusChecker {
+            print("Invalid number, please try again.")
+        } else {
+            print("You have selected \(statusInput)")
+            status += statusInput
+        }
+    }
+}
 
-printUnitsNote()
+if status == 2 {
+    print("\(name) is a smart fella.")
+} else {
+    print("\(name) is a fart smella.")
 
-printGoodbye()
+}
 
     }
 }

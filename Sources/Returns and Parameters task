@@ -1,0 +1,19 @@
+func roomVolume() -> Double {
+    return 2.7
+}
+
+
+
+
+
+
+@main
+struct SwiftPlayground {
+    static func main() {
+
+let Volume = roomVolume()
+
+
+
+    }
+}
