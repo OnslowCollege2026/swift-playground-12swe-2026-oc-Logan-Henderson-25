@@ -28,7 +28,7 @@ struct SwiftPlayground {
         let maximumGuesses = 101
         
         // The size of the board (width and height).
-        let size = 10
+        let size = 6
         
         // The board you are playing on.
         var ocean = Array(repeating: Array(repeating: "~", count: size), count: size)
