@@ -1,49 +1,71 @@
+// The Swift Programming Language
+// https://docs.swift.org/swift-book
+
+
+import Foundation
+
+
 @main
-struct SwiftPlayground {
+struct SwiftPlayground12 {
     static func main() {
-        let vocabulary = [
+        let vocabulary: [[String]] = [
             ["Hello",       "Hola", "Me llamo", "Gracias", "Adios", "Si"],
             ["My name is",  "Me llamo", "Hola", "Gracias", "Adios", "Si"],
             ["Thank you",   "Gracias", "Hola", "Me llamo", "Adios", "Si"],
             ["Goodbye",     "Adios", "Hola", "Me llamo", "Gracias", "Si"],
             ["Yes",         "Si", "Hola", "Me llamo", "Gracias", "Adios"]
         ]
-
-        var incorrectIndices: [Int] = []
-        var incorrectCount = 0
-        var correctCount = 0
+        
+        var counter = 0
         var score = 0
-
-        while correctCount < vocabulary.count {
-            let correctAnswer = vocabulary[correctCount][1]
-            let options = Array(vocabulary[correctCount][1...5]).shuffled()
+        var incorrectAnswerIndices: [Int] = []
+        
+        while counter < vocabulary.count {
+            let englishWord = vocabulary[counter][0]
+            let correctWord = vocabulary[counter][1]
+            let allAnswers = vocabulary[counter].dropFirst().shuffled()
             
-            print("What is the Spanish word for \(vocabulary[correctCount][0])?")
-            for (index, option) in options.enumerated() {
-                print("\(index + 1). \(option)")
+            print("Please translate \(englishWord)")
+            allAnswers.forEach { answer in
+                print("- \(answer)")
             }
-            print("Enter your answer: ")
             
-            if let userInput = readLine() {
-                if let userAnswer = Int(userInput), userAnswer > 0, userAnswer <= 5 {
-                    if options[userAnswer - 1] == correctAnswer {
-                        print("That is correct!")
-                        correctCount += 1
-                        score += 1
-                        print("Your score is \(score)")
-                    } else {
-                        print("That is incorrect. The correct answer is \(correctAnswer).")
-                        incorrectIndices.append(correctCount)
-                        incorrectCount += 1
-                        correctCount += 1
-                        print("Your score is \(score)")
-
-
-                    }
-                } else {
-                    print("Invalid input. Please enter your answers number.")
-                }
+            if let userInput = readLine(), userInput.lowercased() == correctWord.lowercased() {
+                score = score + 1
+                print("Yes, \(correctWord) is correct!")
+            } else {
+                incorrectAnswerIndices.append(counter)
+                print("Sorry! The correct answer is \(correctWord).")
             }
+            
+            counter = counter + 1
+        }
+        
+        while incorrectAnswerIndices.count > 0 {
+            let index = incorrectAnswerIndices[0]
+            
+            let englishWord = vocabulary[index][0]
+            let correctWord = vocabulary[index][1]
+            let allAnswers = vocabulary[index].dropFirst().shuffled()
+            
+            print("Please translate \(englishWord)")
+            allAnswers.forEach { answer in
+                print("- \(answer)")
+            }
+            
+            if let userInput = readLine(), userInput.lowercased() == correctWord.lowercased() {
+                incorrectAnswerIndices.removeFirst()
+                print("Yes, \(correctWord) is correct!")
+            } else {
+                print("Sorry! The correct answer is \(correctWord).")
+            }
+        }
+        
+        print("You have a score of \(score)/\(vocabulary.count)")
+        if Double(score) >= Double(vocabulary.count / 2) {
+            print("Congratulations!")
+        } else {
+            print("Try again next time.")
         }
     }
 }
