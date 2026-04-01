@@ -12,10 +12,11 @@ struct SwiftPlayground {
         var incorrectIndices: [Int] = []
         var incorrectCount = 0
         var correctCount = 0
+        var score = 0
 
         while correctCount < vocabulary.count {
             let correctAnswer = vocabulary[correctCount][1]
-            var options = Array(vocabulary[correctCount][1...5]).shuffled()
+            let options = Array(vocabulary[correctCount][1...5]).shuffled()
             
             print("What is the Spanish word for \(vocabulary[correctCount][0])?")
             for (index, option) in options.enumerated() {
@@ -28,11 +29,16 @@ struct SwiftPlayground {
                     if options[userAnswer - 1] == correctAnswer {
                         print("That is correct!")
                         correctCount += 1
+                        score += 1
+                        print("Your score is \(score)")
                     } else {
                         print("That is incorrect. The correct answer is \(correctAnswer).")
                         incorrectIndices.append(correctCount)
                         incorrectCount += 1
                         correctCount += 1
+                        print("Your score is \(score)")
+
+
                     }
                 } else {
                     print("Invalid input. Please enter your answers number.")
