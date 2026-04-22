@@ -9,11 +9,11 @@ import Foundation
 struct SwiftPlayground12 {
     static func main() {
         let vocabulary: [[String]] = [
-            ["Hello",       "Hola", "Me llamo", "Gracias", "Adios", "Si"],
-            ["My name is",  "Me llamo", "Hola", "Gracias", "Adios", "Si"],
-            ["Thank you",   "Gracias", "Hola", "Me llamo", "Adios", "Si"],
-            ["Goodbye",     "Adios", "Hola", "Me llamo", "Gracias", "Si"],
-            ["Yes",         "Si", "Hola", "Me llamo", "Gracias", "Adios"]
+            ["Hello",       "Hola", "mi nombre es", "Gracias", "Adios", "Si"],
+            ["My name is",  "mi nombre es", "Hola", "Gracias", "Adios", "Si"],
+            ["Thank you",   "Gracias", "Hola", "mi nombre es", "Adios", "Si"],
+            ["Goodbye",     "Adios", "Hola", "mi nombre es", "Gracias", "Si"],
+            ["Yes",         "Si", "Hola", "mi nombre es", "Gracias", "Adios"]
         ]
         
         var counter = 0
