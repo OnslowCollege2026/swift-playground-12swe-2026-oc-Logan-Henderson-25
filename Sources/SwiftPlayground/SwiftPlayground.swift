@@ -24,11 +24,18 @@ struct SwiftPlayground {
     let kumaraPurchased = readLine()
 
 // Prints an error message if the user can't purchase more kumara than is in stock, then asks them to try again.
-if let kumaraPurchased > kumaraStock {
+while true {
+if let kumaraPurchased = Double(kumaraPurchased!), kumaraPurchased > kumaraStock {
     print("Sorry, we don't have enough kumara in stock. Please try again.")
     print (readLine())
-} else if let kumaraPurchased <= kumaraStock {
-    print("Thank you for your purchase! Please come again.") }
 
+// something is wrong with the code, it is not allowing the user to enter a new value for kumaraPurchased, it is just asking them to enter a new value but not actually reading it in and updating the variable. I will try to fix this by moving the readLine() inside the while loop and updating the kumaraPurchased variable with the new input.
+} else {
+while false {
+    if let kumaraPurchased = Double(kumaraPurchased!), kumaraPurchased <= kumaraStock {
+    print("Thank you for your purchase! Please come again.") } }
+
+            }
+        }
     }
 }
