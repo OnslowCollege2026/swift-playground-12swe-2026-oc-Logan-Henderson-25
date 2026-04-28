@@ -11,7 +11,8 @@
 let kumaraStock = 50.0 /// The amount of kumara in stock.
 let kumaraPricePerKg = 3.0 /// The price of kumara per kilogram.
 let kumaraweight = 0.1 /// The weight of a single kumara.
-
+let userInput = readLine() /// Allows the user to enter input into the terminal.
+let kumaraPurchased = userInput /// The amount of kumara the user wants to purchase.
 
 @main
 struct SwiftPlayground {
@@ -21,15 +22,15 @@ struct SwiftPlayground {
 
     print("Welcome to the roadside kumara stall!")
     print("Please enter the the amount of kumara you wish to purchase:")
-    let kumaraPurchased = readLine()
+    print( readLine())
 
 // Prints an error message if the user can't purchase more kumara than is in stock, then asks them to try again.
 while true {
 if let kumaraPurchased = Double(kumaraPurchased!), kumaraPurchased > kumaraStock {
     print("Sorry, we don't have enough kumara in stock. Please try again.")
-    print (readLine())
+    
 
-// something is wrong with the code, it is not allowing the user to enter a new value for kumaraPurchased, it is just asking them to enter a new value but not actually reading it in and updating the variable. I will try to fix this by moving the readLine() inside the while loop and updating the kumaraPurchased variable with the new input.
+// something is wrong with the code, fix next spell
 } else {
 while false {
     if let kumaraPurchased = Double(kumaraPurchased!), kumaraPurchased <= kumaraStock {
