@@ -12,7 +12,11 @@ let kumaraStock = 50.0 /// The amount of kumara in stock.
 let kumaraPricePerKg = 3.0 /// The price of kumara per kilogram.
 let kumaraweight = 0.1 /// The weight of a single kumara.
 let userInput = readLine() /// Allows the user to enter input into the terminal.
-let kumaraPurchased = userInput /// The amount of kumara the user wants to purchase.
+let kumaraPurchased = Double(userInput!) /// Converts the user input into a double
+
+func kumaraBoundaries(kumaraPurchased: Double) {
+if kumaraPurchased < 0 {print("You cannot purchase a negative amount of kumara. Please try again.")}
+if kumaraPurchased == 0-50 {print("You have purchased \(kumaraPurchased) kumara. Your total is $\(kumaraPurchased * kumaraPricePerKg)")}
 
 @main
 struct SwiftPlayground {
@@ -22,21 +26,12 @@ struct SwiftPlayground {
 
     print("Welcome to the roadside kumara stall!")
     print("Please enter the the amount of kumara you wish to purchase:")
-    print( readLine())
+    print(readLine())
 
-// Prints an error message if the user can't purchase more kumara than is in stock, then asks them to try again.
-while true {
-if let kumaraPurchased = Double(kumaraPurchased!), kumaraPurchased > kumaraStock {
-    print("Sorry, we don't have enough kumara in stock. Please try again.")
-    
+kumaraBoundaries(kumaraPurchased: Double(userInput!)!)
 
-// something is wrong with the code, fix next spell
-} else {
-while false {
-    if let kumaraPurchased = Double(kumaraPurchased!), kumaraPurchased <= kumaraStock {
-    print("Thank you for your purchase! Please come again.") } }
+
 
             }
         }
     }
-}
