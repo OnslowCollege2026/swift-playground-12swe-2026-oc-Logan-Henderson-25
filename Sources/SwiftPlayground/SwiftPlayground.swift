@@ -14,9 +14,8 @@ let kumaraweight = 0.1 /// The weight of a single kumara.
 let kumaraAdded = Double(readLine()!) /// Converts the user input into a double
 
 func kumaraBoundaries(kumaraAdded: Double) {
-    print("Please enter how may kumara you wish to add to your bag:")
     if kumaraAdded < 0 {print("You cannot add a negative amount of kumara to your bag. Please try again.")}
-    if kumaraAdded > 0 && kumaraAdded <= 50 {print("You have added \(kumaraAdded) kumara to your bag.")}
+    if kumaraAdded > 0 && kumaraAdded <= 50 {print("You have added \(kumaraAdded) kumara to your bag. Please enter again to calculate the weight and price of the kumara you have added to your bag.")}
     if kumaraAdded > 50 {print("Sorry, we only have \(kumaraStock) kilograms of kumara in stock. Please try again.")}
 
 func kumaraWeight(kumaraAdded: Double) {
@@ -36,17 +35,31 @@ struct SwiftPlayground {
 
     print("Welcome to the roadside kumara stall!")
     print("We have \(kumaraStock) kilograms of kumara in stock, and the price is $\(kumaraPricePerKg) per kilogram.")
-    print("Please enter how many kumara you wish to add to your bag")
+    print("Please enter the weight of the kumara you wish to purchase:")
 
-    kumaraBoundaries(kumaraAdded: Double(readLine()!)!)
+let kumaraAdded = Double(readLine()!)!
+kumaraBoundaries(kumaraAdded: kumaraAdded)
+kumaraWeight(kumaraAdded: kumaraAdded)
+kumaraPrice(kumaraAdded: kumaraAdded)
 
-kumaraWeight(kumaraAdded: Double(readLine()!)!)
+print("Are you sure you want to purchase \(kumaraAdded) kilograms of kumara for $\(kumaraAdded * kumaraPricePerKg)? (yes/no)")
 
+print(readLine()!)
+if readLine()! == "yes" {
+    print("Thank you for your purchase! Please come again!")
+} else {
+if readLine()! == "no" {
+    print("No worries! Please take your time to decide how much kumara you would like to purchase.")
+kumaraBoundaries(kumaraAdded: kumaraAdded)
+kumaraWeight(kumaraAdded: kumaraAdded)
+kumaraPrice(kumaraAdded: kumaraAdded)
+} else {
+    print("Please enter 'yes' or 'no' to confirm your purchase.")
 
-
-    kumaraPrice(kumaraAdded: Double(readLine()!)!)
 
 
         }
     }
+    }
+}
 }
