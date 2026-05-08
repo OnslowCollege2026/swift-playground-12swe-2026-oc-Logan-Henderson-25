@@ -16,7 +16,8 @@ let kumaraPurchased = Double(userInput!) /// Converts the user input into a doub
 
 func kumaraBoundaries(kumaraPurchased: Double) {
 if kumaraPurchased < 0 {print("You cannot purchase a negative amount of kumara. Please try again.")}
-if kumaraPurchased == 0-50 {print("You have purchased \(kumaraPurchased) kumara. Your total is $\(kumaraPurchased * kumaraPricePerKg)")}
+if kumaraPurchased > 0 && kumaraPurchased <= 50 {print("You have purchased \(kumaraPurchased) kumara. Your total is $\(kumaraPurchased * kumaraPricePerKg)")}
+if kumaraPurchased > 50 {print("Sorry, we only have \(kumaraStock) kilograms of kumara in stock. Please try again.")}
 
 @main
 struct SwiftPlayground {
