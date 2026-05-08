@@ -11,12 +11,13 @@
 let kumaraStock = 50.0 /// The amount of kumara in stock.
 let kumaraPricePerKg = 3.0 /// The price of kumara per kilogram.
 let kumaraweight = 0.1 /// The weight of a single kumara.
-
+let kumaraAdded = Double(readLine()!) /// Converts the user input into a double
 
 func kumaraBoundaries(kumaraAdded: Double) {
-if kumaraAdded < 0 {print("You cannot add a negative amount of kumara to your bag. Please try again.")}
-if kumaraAdded > 0 && kumaraAdded <= 50 {print("You have added \(kumaraAdded) kumara to your bag.")}
-if kumaraAdded > 50 {print("Sorry, we only have \(kumaraStock) kilograms of kumara in stock. Please try again.")}
+    print("Please enter how may kumara you wish to add to your bag:")
+    if kumaraAdded < 0 {print("You cannot add a negative amount of kumara to your bag. Please try again.")}
+    if kumaraAdded > 0 && kumaraAdded <= 50 {print("You have added \(kumaraAdded) kumara to your bag.")}
+    if kumaraAdded > 50 {print("Sorry, we only have \(kumaraStock) kilograms of kumara in stock. Please try again.")}
 
 func kumaraWeight(kumaraAdded: Double) {
     let kumaraWeight = kumaraAdded * kumaraweight
@@ -35,7 +36,8 @@ struct SwiftPlayground {
 
     print("Welcome to the roadside kumara stall!")
     print("We have \(kumaraStock) kilograms of kumara in stock, and the price is $\(kumaraPricePerKg) per kilogram.")
-    print("Please enter how many kumara you wish to add to your bag:")
+    print("Please enter how many kumara you wish to add to your bag")
+    print("Then enter the weight of the kumara in kilograms to find out how much you need to pay")
     kumaraBoundaries(kumaraAdded: Double(readLine()!)!)
 
 
