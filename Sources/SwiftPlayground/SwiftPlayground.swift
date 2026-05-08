@@ -23,6 +23,10 @@ func kumaraWeight(kumaraAdded: Double) {
     print("The weight of the kumara you have added to your bag is \(kumaraWeight * kumaraAdded) kilograms.")
 }
 
+func kumaraPrice(kumaraAdded: Double) {
+    let kumaraPrice = kumaraAdded * kumaraPricePerKg
+    print("The price of the kumara you have added to your bag is $\(kumaraPrice).")
+}
 @main
 struct SwiftPlayground {
     static func main() {
@@ -35,7 +39,7 @@ struct SwiftPlayground {
 
 kumaraBoundaries(kumaraAdded: Double(readLine()!)!)
 kumaraWeight(kumaraAdded: Double(readLine()!)!)
-
+kumaraPrice(kumaraAdded: Double())
 
 
             }
