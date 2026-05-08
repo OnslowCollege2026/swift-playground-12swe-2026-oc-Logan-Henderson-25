@@ -37,13 +37,13 @@ struct SwiftPlayground {
     print("Welcome to the roadside kumara stall!")
     print("We have \(kumaraStock) kilograms of kumara in stock, and the price is $\(kumaraPricePerKg) per kilogram.")
     print("Please enter how many kumara you wish to add to your bag")
-    print("Then enter the weight of the kumara in kilograms to find out how much you need to pay")
+
     kumaraBoundaries(kumaraAdded: Double(readLine()!)!)
-
-
 
 kumaraWeight(kumaraAdded: Double(readLine()!)!)
 print("The weight of the kumara you have added to your bag is \(kumaraWeight(kumaraAdded: Double(readLine()!)!)) kilograms.")
+
+print("Now enter the weight of the kumara in kilograms to find out how much you need to pay")
 
 kumaraPrice(kumaraAdded: Double(readLine()!)!)
 print("Your total is $\(kumaraPrice(kumaraAdded: Double(readLine()!)!)). Are you sure you want to pay this amount? (yes/no):")
