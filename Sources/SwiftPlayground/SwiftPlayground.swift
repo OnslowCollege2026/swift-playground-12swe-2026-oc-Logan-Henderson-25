@@ -34,13 +34,14 @@ struct SwiftPlayground {
 // Prints a message that lets the user enter the weight of the kumara they wish to purchase in kilograms.
 
     print("Welcome to the roadside kumara stall!")
-    print("Please grab a bag and fill it with kumara. Then, enter the weight of the kumara in kilograms to find out how much you need to pay.")
+    print("Then enter the weight of the kumara in kilograms to find out how much you need to pay.")
     print("Please enter how may kumara you wish to add to your bag:")
-
 kumaraBoundaries(kumaraAdded: Double(readLine()!)!)
+
+print("")
 kumaraWeight(kumaraAdded: Double(readLine()!)!)
 kumaraPrice(kumaraAdded: Double(readLine()!)!)
-print("Your total is $\(kumaraPrice). Are you sure you want to pay this amount? (yes/no):")
+print("Your total is $\(kumaraPrice(kumaraAdded: Double(readLine()!)!)). Are you sure you want to pay this amount? (yes/no):")
 print(readLine()!)
 if readLine()! == "yes" {
     print("Thank you for your purchase!")
