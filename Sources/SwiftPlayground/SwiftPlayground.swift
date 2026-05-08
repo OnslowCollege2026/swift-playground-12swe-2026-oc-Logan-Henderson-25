@@ -20,7 +20,7 @@ if kumaraAdded > 50 {print("Sorry, we only have \(kumaraStock) kilograms of kuma
 
 func kumaraWeight(kumaraAdded: Double) {
     let kumaraWeight = kumaraAdded * kumaraweight
-    print("The weight of the kumara you have added to your bag is \(kumaraWeight) kilograms.")
+    print("The weight of the kumara you have added to your bag is \(kumaraWeight * kumaraAdded) kilograms.")
 }
 
 @main
@@ -34,8 +34,7 @@ struct SwiftPlayground {
     print("Please enter how may kumara you wish to add to your bag:")
 
 kumaraBoundaries(kumaraAdded: Double(readLine()!)!)
-print("Please enter the weight of your bag of kumara:")
-
+kumaraWeight(kumaraAdded: Double(readLine()!)!)
 
 
 
