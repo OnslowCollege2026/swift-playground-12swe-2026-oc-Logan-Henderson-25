@@ -42,24 +42,9 @@ kumaraBoundaries(kumaraAdded: kumaraAdded)
 kumaraWeight(kumaraAdded: kumaraAdded)
 kumaraPrice(kumaraAdded: kumaraAdded)
 
-print("Are you sure you want to purchase \(kumaraAdded) kilograms of kumara for $\(kumaraAdded * kumaraPricePerKg)? (yes/no)")
-
-print(readLine()!)
-if readLine()! == "yes" {
-    print("Thank you for your purchase! Please come again!")
-} else {
-if readLine()! == "no" {
-    print("No worries! Please take your time to decide how much kumara you would like to purchase.")
-kumaraBoundaries(kumaraAdded: kumaraAdded)
-kumaraWeight(kumaraAdded: kumaraAdded)
-kumaraPrice(kumaraAdded: kumaraAdded)
-} else {
-    print("Please enter 'yes' or 'no' to confirm your purchase.")
-
+print("Thank you for your purchase! Please come again.")
 
 
         }
     }
     }
-}
-}
