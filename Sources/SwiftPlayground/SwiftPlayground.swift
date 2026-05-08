@@ -39,7 +39,7 @@ struct SwiftPlayground {
 
 kumaraBoundaries(kumaraAdded: Double(readLine()!)!)
 kumaraWeight(kumaraAdded: Double(readLine()!)!)
-kumaraPrice(kumaraAdded: Double())
+kumaraPrice(kumaraAdded: Double(readLine()!)!)
 
 
             }
