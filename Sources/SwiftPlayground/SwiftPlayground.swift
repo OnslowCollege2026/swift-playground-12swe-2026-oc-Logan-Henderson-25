@@ -41,39 +41,12 @@ struct SwiftPlayground {
     kumaraBoundaries(kumaraAdded: Double(readLine()!)!)
 
 kumaraWeight(kumaraAdded: Double(readLine()!)!)
-print("The weight of the kumara you have added to your bag is \(kumaraWeight(kumaraAdded: Double(readLine()!)!)) kilograms.")
 
-print("Are u sure you want to pay this amount? (yes/no):")
-print(readLine()!)
-    if readLine()! == "yes" {
-        print("Thank you for your purchase!")
-    } else {
-    if readLine()! == "no" {
-        print("Please adjust the weight of the kumara in your bag and try again.")
-        print(readLine()!)
-    } else {
-    print("Invalid input. Please enter 'yes' or 'no'.")
-        print(readLine()!)
 
-print("Now enter the weight of the kumara in kilograms to find out how much you need to pay")
+
     kumaraPrice(kumaraAdded: Double(readLine()!)!)
-print("Your total is $\(kumaraPrice(kumaraAdded: Double(readLine()!)!)). Are you sure you want to pay this amount? (yes/no):")
-print(readLine()!)
-if readLine()! == "yes" {
-    print("Thank you for your purchase!")
-} else {
-if readLine()! == "no" {
-    print("Please adjust the weight of the kumara in your bag and try again.")
-    print(readLine()!)
 
-} else {
-print("Invalid input. Please enter 'yes' or 'no'.")
-    print(readLine()!)
 
-                        }
-                    }
-                }
-            }
         }
     }
 }
