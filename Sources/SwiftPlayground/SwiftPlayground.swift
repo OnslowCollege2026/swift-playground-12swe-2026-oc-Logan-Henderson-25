@@ -33,8 +33,9 @@ struct SwiftPlayground {
     print("Please grab a bag and fill it with kumara. Then, enter the weight of the kumara in kilograms to find out how much you need to pay.")
     print("Please enter how may kumara you wish to add to your bag:")
 
-
-kumaraBoundaries(kumaraPurchased: Double(readLine()!)!)
+kumaraBoundaries(kumaraAdded: Double(readLine()!)!)
+print("Please weigh your bag of kumara")
+kumaraWeight(kumaraAdded: Double)
 
 
 
